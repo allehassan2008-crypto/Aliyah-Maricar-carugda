@@ -3,109 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aliyah - My Love</title>
+<title>Aliyah 💖 My Love</title>
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-  /* Reset */
-  * { margin:0; padding:0; box-sizing:border-box; }
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
 
-  body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
-    color: #333;
-    overflow-x: hidden;
-  }
+/* Body */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to bottom, #fff0f5, #ffe6f0);
+  color: #333;
+  overflow-x: hidden;
+  position: relative;
+}
 
-  /* Floating Hearts */
-  .heart {
-    position: absolute;
-    font-size: 1.5em;
-    color: #ff4d6d;
-    animation: float 6s linear infinite;
-    opacity: 0.8;
-  }
-  @keyframes float {
-    0% { transform: translateY(100vh) translateX(0); opacity:0;}
-    50% { opacity:1;}
-    100% { transform: translateY(-100vh) translateX(50px); opacity:0;}
-  }
+/* Stars background */
+body::before {
+  content: '';
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url('https://i.ibb.co/6vR3qJ7/stars.png') repeat;
+  z-index: -1;
+  animation: moveStars 100s linear infinite;
+}
+@keyframes moveStars {
+  0% { background-position: 0 0; }
+  100% { background-position: -10000px 0; }
+}
 
-  /* Hero Section */
-  #hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    position: relative;
-    overflow:hidden;
-  }
-  #hero h1 {
-    font-family: 'Pacifico', cursive;
-    font-size: 3em;
-    color: #d63384;
-    margin-bottom: 10px;
-  }
-  #hero h2 {
-    font-size: 1.5em;
-    color: #555;
-  }
+/* Floating hearts */
+.heart {
+  position: absolute;
+  font-size: 1.5em;
+  color: #ff4d6d;
+  animation: float 6s linear infinite;
+  opacity: 0.8;
+}
+@keyframes float {
+  0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity:0; }
+  50% { opacity:1; }
+  100% { transform: translateY(-100vh) translateX(50px) rotate(360deg); opacity:0; }
+}
 
-  /* Sections */
-  section {
-    padding: 60px 20px;
-    max-width: 900px;
-    margin: auto;
-  }
-  section h2 {
-    font-family: 'Pacifico', cursive;
-    color: #d63384;
-    font-size: 2em;
-    margin-bottom: 20px;
-    text-align:center;
-  }
-  section p {
-    font-size: 1.1em;
-    line-height:1.8;
-    margin-bottom: 20px;
-  }
+/* Hero Section */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position: relative;
+  overflow:hidden;
+}
+#hero h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 3.5em;
+  color: #d63384;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px #ffb6c1;
+}
+#hero h2 {
+  font-size: 1.5em;
+  color: #555;
+}
 
-  /* Love Letters */
-  .letter {
-    background:#fff0f5;
-    border-left:5px solid #ff4d6d;
-    padding:20px;
-    border-radius:15px;
-    margin-bottom:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.1);
-  }
+/* Sections */
+section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+section h2 {
+  font-family: 'Pacifico', cursive;
+  color: #d63384;
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  text-align:center;
+}
+section p {
+  font-size: 1.15em;
+  line-height:1.8;
+  margin-bottom: 20px;
+}
 
-  /* Footer */
-  footer {
-    text-align:center;
-    padding:40px 20px;
-    color:#777;
-    font-size:0.9em;
-  }
+/* Love Letters */
+.letter {
+  background:#fff0f5;
+  border-left:5px solid #ff4d6d;
+  padding:25px;
+  border-radius:15px;
+  margin-bottom:25px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.12);
+  transition: transform 0.3s, background 0.3s;
+}
+.letter:hover {
+  transform: scale(1.05);
+  background: #ffe6f0;
+}
 
-  /* Music Button */
-  #musicBtn {
-    position:fixed;
-    top:20px;
-    right:20px;
-    background:#ff4d6d;
-    color:white;
-    border:none;
-    padding:10px 15px;
-    border-radius:10px;
-    cursor:pointer;
-    font-family:'Pacifico', cursive;
-  }
+/* Footer */
+footer {
+  text-align:center;
+  padding:40px 20px;
+  color:#777;
+  font-size:0.95em;
+}
 
+/* Music Button */
+#musicBtn {
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:#ff4d6d;
+  color:white;
+  border:none;
+  padding:12px 18px;
+  border-radius:12px;
+  cursor:pointer;
+  font-family:'Pacifico', cursive;
+  z-index: 1000;
+}
+
+/* Cursor hearts effect */
+.cursor-heart {
+  position: absolute;
+  font-size: 1.2em;
+  color: #ff4d6d;
+  pointer-events: none;
+  animation: heartPop 1s forwards;
+}
+@keyframes heartPop {
+  0% { transform: scale(1); opacity:1;}
+  100% { transform: scale(2); opacity:0;}
+}
 </style>
 </head>
 
@@ -113,42 +149,54 @@
 
 <!-- Floating Hearts -->
 <script>
-for(let i=0;i<30;i++){
+for(let i=0;i<25;i++){
   let heart=document.createElement('div');
   heart.className='heart';
   heart.style.left=Math.random()*100+'vw';
-  heart.style.animationDuration=(4+Math.random()*4)+'s';
+  heart.style.animationDuration=(5+Math.random()*5)+'s';
   heart.innerHTML='❤️';
   document.body.appendChild(heart);
 }
 </script>
 
-<!-- Background Music -->
+<!-- Cursor heart effect -->
+<script>
+document.addEventListener('mousemove', function(e){
+  let heart = document.createElement('div');
+  heart.className='cursor-heart';
+  heart.style.left = e.pageX + 'px';
+  heart.style.top = e.pageY + 'px';
+  heart.innerHTML='💖';
+  document.body.appendChild(heart);
+  setTimeout(()=>{heart.remove()},1000);
+});
+</script>
+
+<!-- Music -->
 <audio id="bgMusic" loop>
   <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
 </audio>
 <button id="musicBtn" onclick="toggleMusic()">Play Music 🎵</button>
-
 <script>
 function toggleMusic(){
   let music=document.getElementById('bgMusic');
   let btn=document.getElementById('musicBtn');
-  if(music.paused){ music.play(); btn.innerText='Pause Music 🎵';}
-  else{ music.pause(); btn.innerText='Play Music 🎵';}
+  if(music.paused){ music.play(); btn.innerText='Pause Music 🎵'; }
+  else { music.pause(); btn.innerText='Play Music 🎵'; }
 }
 </script>
 
 <!-- Hero Section -->
 <section id="hero">
   <h1>Aliyah 💖</h1>
-  <h2>You are my life, my happiness, my everything 🥰</h2>
+  <h2>You are my life, my joy, my everything 🥰</h2>
 </section>
 
 <!-- About Aliyah Section -->
 <section id="about">
-  <h2>About Aliyah 🌸</h2>
-  <p>Bebiii, you are the most amazing person I have ever met. Your smile brightens my darkest days, and your laughter is my favorite sound. You’re kind, gentle, caring, smart, and soft-hearted. I love how genuine you are, and every little thing about you makes me fall for you again and again 💛</p>
-  <p>You’re my inspiration, my happiness, and my love. I can’t imagine my life without you, Aliyah. You make everything in my world better just by being in it 🥰</p>
+  <h2>About Aliyah 🌟</h2>
+  <p>Bebiii, you are the most amazing person I have ever met. Your smile brightens my darkest days, your laugh makes my heart skip, and your kindness fills my world with warmth. You’re smart, gentle, loving, and so genuine. Everything about you makes me fall for you more and more 💛</p>
+  <p>Being with you is like a dream come true. You are my sunshine, my happiness, my heartbeat. I love you endlessly, Aliyah 🥰</p>
 </section>
 
 <!-- Love Letters Section -->
@@ -156,30 +204,30 @@ function toggleMusic(){
   <h2>Love Letters 💌</h2>
 
   <div class="letter">
-    <p>My beloved Aliyah, every day I feel so lucky to have you in my life. Thinking of you makes me smile like crazy. I promise to always protect your heart, cherish every moment with you, and love you more with each passing day. You are my everything 🥹💖</p>
+    <p>My dearest Aliyah, every time I think of you, my heart overflows with love. You are my reason to smile, my peace, my everything. I promise to love you forever, cherish you endlessly, and always be by your side 🥹💖</p>
   </div>
 
   <div class="letter">
-    <p>Bebiii, you are my dream come true. Your love fills me with warmth, and your care makes me feel so special. I will never let go of you, never give up on us, and always be yours. You are my future, my wifu, my baby girl, and my happiness 💛</p>
+    <p>Bebiii, you are my dream come true. Your love is my strength, your presence is my happiness, and your heart is my home. I will never let go of you, never give up on us, and always make sure you feel loved every single day 💛</p>
   </div>
 
   <div class="letter">
-    <p>Every moment with you feels magical, Aliyah. From your sweet messages to your adorable smile, everything about you is perfect to me. I love you endlessly, and I can’t wait for all the memories we will create together 🥰💖</p>
+    <p>Aliyah, being with you feels like heaven. Your sweet words, your cute smile, your laughter—they all make me love you more than I ever thought possible. You are my forever, my wifu, my baby girl, my everything 🥰💖</p>
   </div>
 
 </section>
 
 <!-- Future / Dreams Section -->
 <section id="future">
-  <h2>Our Future 🌟</h2>
-  <p>I dream of a life where we are always together, supporting each other, laughing together, and living our dreams side by side. Someday, in God’s perfect timing, we will meet and start our beautiful life together 🥺💛</p>
-  <p>We will create happiness, grow stronger together, and always remind each other how much we love one another. You are my forever, Aliyah, my everything 💕</p>
+  <h2>Our Future 🌌</h2>
+  <p>I dream of a life with you, where we laugh together, support each other, and grow stronger every day. Someday, in God’s perfect timing, we will meet and start our life together. I promise to make it magical for you 🥺💛</p>
+  <p>We will build beautiful memories, share endless happiness, and always remind each other how much we love one another. You are my everything, Aliyah 💕</p>
 </section>
 
 <!-- Footer -->
 <footer>
-  Made with love 💛 for <b>Aliyah (Maricar Carugda Khan)</b> — my life, my happiness, my everything 🥰
+Made with love 💛 for <b>Aliyah (Maricar Carugda Khan)</b> — my life, my happiness, my forever 🥰
 </footer>
 
 </body>
-  </html> 
+</html>
