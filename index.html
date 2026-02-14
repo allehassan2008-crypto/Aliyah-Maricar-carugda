@@ -3,216 +3,171 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aliyah 💖 My Love</title>
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<title>Happy Valentine’s Day Aliyah 💖</title>
 
 <style>
-/* Reset */
-* { margin:0; padding:0; box-sizing:border-box; }
-
-/* Body and Background */
-body {
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(to bottom, #fff0f5, #ffe6f0);
-  color: #333;
-  overflow-x: hidden;
-  position: relative;
-}
-
-/* Floating Hearts */
-.heart {
-  position: absolute;
-  font-size: 1.5em;
-  color: #ff4d6d;
-  animation: float 6s linear infinite;
-  opacity: 0.8;
-}
-@keyframes float {
-  0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity:0; }
-  50% { opacity:1; }
-  100% { transform: translateY(-100vh) translateX(50px) rotate(360deg); opacity:0; }
-}
-
-/* Hero Section */
-#hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  position: relative;
-  overflow:hidden;
-}
-#hero h1 {
-  font-family: 'Pacifico', cursive;
-  font-size: 3.5em;
-  color: #d63384;
-  margin-bottom: 10px;
-  text-shadow: 2px 2px #ffb6c1;
-}
-#hero h2 {
-  font-size: 1.5em;
-  color: #555;
-}
-
-/* Sections */
-section {
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-section h2 {
-  font-family: 'Pacifico', cursive;
-  color: #d63384;
-  font-size: 2.2em;
-  margin-bottom: 20px;
-  text-align:center;
-}
-section p {
-  font-size: 1.15em;
-  line-height:1.8;
-  margin-bottom: 20px;
-}
-
-/* Love Letters */
-.letter {
-  background:#fff0f5;
-  border-left:5px solid #ff4d6d;
-  padding:25px;
-  border-radius:15px;
-  margin-bottom:25px;
-  box-shadow:0 8px 25px rgba(0,0,0,0.12);
-  transition: transform 0.3s, background 0.3s;
-}
-.letter:hover {
-  transform: scale(1.05);
-  background: #ffe6f0;
-}
-
-/* Footer */
-footer {
-  text-align:center;
-  padding:40px 20px;
-  color:#777;
-  font-size:0.95em;
-}
-
-/* Music Button */
-#musicBtn {
-  position:fixed;
-  top:20px;
-  right:20px;
-  background:#ff4d6d;
+body{
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg,#ff758c,#ff7eb3,#fad0c4);
   color:white;
-  border:none;
-  padding:12px 18px;
-  border-radius:12px;
-  cursor:pointer;
-  font-family:'Pacifico', cursive;
-  z-index: 1000;
+  text-align:center;
+  overflow-x:hidden;
 }
 
-/* Cursor hearts effect */
-.cursor-heart {
-  position: absolute;
-  font-size: 1.2em;
-  color: #ff4d6d;
-  pointer-events: none;
-  animation: heartPop 1s forwards;
+h1{
+  margin-top:30px;
+  font-size:35px;
 }
-@keyframes heartPop {
-  0% { transform: scale(1); opacity:1;}
-  100% { transform: scale(2); opacity:0;}
+
+.section{
+  margin:25px;
+  padding:30px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(15px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+  animation:fade 1.5s ease;
+}
+
+@keyframes fade{
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+button{
+  padding:10px 20px;
+  border:none;
+  border-radius:20px;
+  background:white;
+  color:#ff4e73;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#ff4e73;
+  color:white;
+}
+
+.gallery img{
+  width:150px;
+  border-radius:15px;
+  margin:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+.heart{
+  position:fixed;
+  color:red;
+  animation:float 6s linear infinite;
+}
+
+@keyframes float{
+  from{transform:translateY(100vh);}
+  to{transform:translateY(-10vh);}
 }
 </style>
 </head>
 
 <body>
 
-<!-- Floating Hearts -->
-<script>
-for(let i=0;i<30;i++){
-  let heart=document.createElement('div');
-  heart.className='heart';
-  heart.style.left=Math.random()*100+'vw';
-  heart.style.animationDuration=(5+Math.random()*5)+'s';
-  heart.innerHTML='❤️';
-  document.body.appendChild(heart);
-}
-</script>
+<h1>Happy Valentine’s Day 💖<br>Aliyah</h1>
 
-<!-- Cursor heart effect -->
-<script>
-document.addEventListener('mousemove', function(e){
-  let heart = document.createElement('div');
-  heart.className='cursor-heart';
-  heart.style.left = e.pageX + 'px';
-  heart.style.top = e.pageY + 'px';
-  heart.innerHTML='💖';
-  document.body.appendChild(heart);
-  setTimeout(()=>{heart.remove()},1000);
-});
-</script>
+<div class="section">
+<p>Even if your phone was stolen, nothing can steal our love. Not distance. Not problems. Not bad days. I still choose you every single time. 💌</p>
+</div>
 
-<!-- Music -->
-<audio id="bgMusic" loop>
+<div class="section">
+<h2>Play Our Song 🎵</h2>
+<audio controls>
   <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
 </audio>
-<button id="musicBtn" onclick="toggleMusic()">Play Music 🎵</button>
+</div>
+
+<div class="section gallery">
+<h2>Our Cute Gallery 📸</h2>
+<img src="https://picsum.photos/200?1">
+<img src="https://picsum.photos/200?2">
+<img src="https://picsum.photos/200?3">
+</div>
+
 <script>
-function toggleMusic(){
-  let music=document.getElementById('bgMusic');
-  let btn=document.getElementById('musicBtn');
-  if(music.paused){ music.play(); btn.innerText='Pause Music 🎵'; }
-  else { music.pause(); btn.innerText='Play Music 🎵'; }
+for(let i=0;i<25;i++){
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(10+Math.random()*25)+"px";
+heart.style.animationDuration=(4+Math.random()*4)+"s";
+document.body.appendChild(heart);
 }
 </script>
 
-<!-- Hero Section -->
-<section id="hero">
-  <h1>Aliyah 💖</h1>
-  <h2>You are my life, my joy, my everything 🥰</h2>
-</section>
+<!-- 50 Cute Sections -->
 
-<!-- About Aliyah Section -->
-<section id="about">
-  <h2>About Aliyah 🌟</h2>
-  <p>Bebiii, you are the most amazing person I have ever met. Your smile brightens my darkest days, your laugh makes my heart skip, and your kindness fills my world with warmth. You’re smart, gentle, loving, and so genuine. Everything about you makes me fall for you more and more 💛</p>
-  <p>Being with you is like a dream come true. You are my sunshine, my happiness, my heartbeat. I love you endlessly, Aliyah 🥰</p>
-</section>
+<div class="section"><h2>1</h2><p>Your smile is my favorite notification.</p></div>
+<div class="section"><h2>2</h2><p>Your laugh is my comfort sound.</p></div>
+<div class="section"><h2>3</h2><p>The way you say “bebiii” melts me.</p></div>
+<div class="section"><h2>4</h2><p>Your sleepy voice is adorable.</p></div>
+<div class="section"><h2>5</h2><p>You care about my health like no one else.</p></div>
+<div class="section"><h2>6</h2><p>Your hardworking side is so attractive.</p></div>
+<div class="section"><h2>7</h2><p>Your blush is my weakness.</p></div>
+<div class="section"><h2>8</h2><p>You overthink because you love deeply.</p></div>
+<div class="section"><h2>9</h2><p>Your good morning texts are better than sunshine.</p></div>
+<div class="section"><h2>10</h2><p>Your soft heart makes you special.</p></div>
 
-<!-- Love Letters Section -->
-<section id="letters">
-  <h2>Love Letters 💌</h2>
+<div class="section"><h2>11</h2><p>You make simple moments magical.</p></div>
+<div class="section"><h2>12</h2><p>Your random giggles are priceless.</p></div>
+<div class="section"><h2>13</h2><p>You support me even from distance.</p></div>
+<div class="section"><h2>14</h2><p>You always say “po” so cutely.</p></div>
+<div class="section"><h2>15</h2><p>Your caring nature makes me feel safe.</p></div>
+<div class="section"><h2>16</h2><p>You make me feel chosen.</p></div>
+<div class="section"><h2>17</h2><p>Your eyes hold warmth.</p></div>
+<div class="section"><h2>18</h2><p>Your soft energy calms me.</p></div>
+<div class="section"><h2>19</h2><p>You celebrate even small wins.</p></div>
+<div class="section"><h2>20</h2><p>You make love feel gentle.</p></div>
 
-  <div class="letter">
-    <p>My dearest Aliyah, every time I think of you, my heart overflows with love. You are my reason to smile, my peace, my everything. I promise to love you forever, cherish you endlessly, and always be by your side 🥹💖</p>
-  </div>
+<div class="section"><h2>21</h2><p>Your sweetness is natural.</p></div>
+<div class="section"><h2>22</h2><p>You’re strong even when you cry.</p></div>
+<div class="section"><h2>23</h2><p>Your effort means everything.</p></div>
+<div class="section"><h2>24</h2><p>You glow even on bad days.</p></div>
+<div class="section"><h2>25</h2><p>You make distance feel smaller.</p></div>
 
-  <div class="letter">
-    <p>Bebiii, you are my dream come true. Your love is my strength, your presence is my happiness, and your heart is my home. I will never let go of you, never give up on us, and always make sure you feel loved every single day 💛</p>
-  </div>
+<div class="section"><h2>26</h2><p>Your loyalty is rare.</p></div>
+<div class="section"><h2>27</h2><p>You’re my favorite human.</p></div>
+<div class="section"><h2>28</h2><p>You make my heart peaceful.</p></div>
+<div class="section"><h2>29</h2><p>You inspire me daily.</p></div>
+<div class="section"><h2>30</h2><p>Your love feels safe.</p></div>
 
-  <div class="letter">
-    <p>Aliyah, being with you feels like heaven. Your sweet words, your cute smile, your laughter—they all make me love you more than I ever thought possible. You are my forever, my wifu, my baby girl, my everything 🥰💖</p>
-  </div>
+<div class="section"><h2>31</h2><p>Your messages brighten my mood.</p></div>
+<div class="section"><h2>32</h2><p>You are beautifully genuine.</p></div>
+<div class="section"><h2>33</h2><p>Your voice is my comfort place.</p></div>
+<div class="section"><h2>34</h2><p>You always try your best.</p></div>
+<div class="section"><h2>35</h2><p>You make me proud.</p></div>
 
-</section>
+<div class="section"><h2>36</h2><p>Your kindness is unmatched.</p></div>
+<div class="section"><h2>37</h2><p>You are my sunshine.</p></div>
+<div class="section"><h2>38</h2><p>You are my calm.</p></div>
+<div class="section"><h2>39</h2><p>You are my happiness.</p></div>
+<div class="section"><h2>40</h2><p>You are my heart.</p></div>
 
-<!-- Future / Dreams Section -->
-<section id="future">
-  <h2>Our Future 🌌</h2>
-  <p>I dream of a life with you, where we laugh together, support each other, and grow stronger every day. Someday, in God’s perfect timing, we will meet and start our life together. I promise to make it magical for you 🥺💛</p>
-  <p>We will build beautiful memories, share endless happiness, and always remind each other how much we love one another. You are my everything, Aliyah 💕</p>
-</section>
+<div class="section"><h2>41</h2><p>You make love feel easy.</p></div>
+<div class="section"><h2>42</h2><p>You make me feel lucky.</p></div>
+<div class="section"><h2>43</h2><p>You are beautiful inside and out.</p></div>
+<div class="section"><h2>44</h2><p>You care deeply.</p></div>
+<div class="section"><h2>45</h2><p>You never give up.</p></div>
 
-<!-- Footer -->
-<footer>
-Made with love 💛 for <b>Aliyah (Maricar Carugda Khan)</b> — my life, my happiness, my forever 🥰
-</footer>
+<div class="section"><h2>46</h2><p>You are soft yet strong.</p></div>
+<div class="section"><h2>47</h2><p>You make every day special.</p></div>
+<div class="section"><h2>48</h2><p>You are my favorite notification.</p></div>
+<div class="section"><h2>49</h2><p>You are my always.</p></div>
+<div class="section"><h2>50</h2><p>No matter what happens, I choose you. Always. Happy Valentine’s Day my love 💖</p></div>
+
+<div class="section">
+<h2>Final Message</h2>
+<p>This website is just a tiny piece of how much you mean to me. Phones can be stolen, money can be lost, but love like this stays. I’m proud of you, I care about you, and I will always be here for you. 💘</p>
+</div>
 
 </body>
-</html>
+                                  </html>
