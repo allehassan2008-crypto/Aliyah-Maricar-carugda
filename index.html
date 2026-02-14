@@ -3,171 +3,279 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Valentine’s Day Aliyah 💖</title>
-
+<title>Happy Valentine’s Day ❤️</title>
 <style>
-body{
-  margin:0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg,#ff758c,#ff7eb3,#fad0c4);
-  color:white;
-  text-align:center;
-  overflow-x:hidden;
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #333;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    position: relative;
 }
 
-h1{
-  margin-top:30px;
-  font-size:35px;
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.9);
+    padding: 10px 0;
+    z-index: 1000;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.section{
-  margin:25px;
-  padding:30px;
-  border-radius:20px;
-  background:rgba(255,255,255,0.15);
-  backdrop-filter:blur(15px);
-  box-shadow:0 8px 20px rgba(0,0,0,0.2);
-  animation:fade 1.5s ease;
+nav a {
+    font-family: 'Pacifico', cursive;
+    margin: 0 5px;
+    text-decoration: none;
+    color: #d62828;
+    font-size: 1em;
+    transition: transform 0.2s, color 0.2s;
 }
 
-@keyframes fade{
-  from{opacity:0;transform:translateY(30px);}
-  to{opacity:1;transform:translateY(0);}
+nav a:hover {
+    color: #e63946;
+    transform: scale(1.2);
 }
 
-button{
-  padding:10px 20px;
-  border:none;
-  border-radius:20px;
-  background:white;
-  color:#ff4e73;
-  font-weight:bold;
-  cursor:pointer;
+.section {
+    min-height: 100vh;
+    width: 100%;
+    padding: 100px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(255,255,255,0.95);
+    margin: 0;
+    border-radius: 25px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+.section:hover p {
+    transform: scale(1.03);
+    color: #e63946;
 }
 
-button:hover{
-  background:#ff4e73;
-  color:white;
+h1 {
+    font-size: 4em;
+    color: #e63946;
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 40px;
 }
 
-.gallery img{
-  width:150px;
-  border-radius:15px;
-  margin:10px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+h2 {
+    font-size: 3em;
+    margin-bottom: 40px;
+    color: #d62828;
+    font-family: 'Pacifico', cursive;
 }
 
-.heart{
-  position:fixed;
-  color:red;
-  animation:float 6s linear infinite;
+p {
+    max-width: 1000px;
+    font-size: 1.5em;
+    line-height: 2.2em;
+    transition: transform 0.3s, color 0.3s;
 }
 
-@keyframes float{
-  from{transform:translateY(100vh);}
-  to{transform:translateY(-10vh);}
+/* Footer */
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.3em;
+    color: #d62828;
+}
+
+/* Falling hearts animation */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    transform: rotate(45deg);
+    left: 0;
+    top: -10px;
+    animation: fall linear infinite;
+    z-index: 1;
+}
+.heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+}
+.heart::before { top: -10px; left: 0; }
+.heart::after { left: 10px; top: 0; }
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(45deg); opacity:1;}
+    100% { transform: translateY(120vh) rotate(405deg); opacity:0;}
+}
+
+/* Glitter hearts animation */
+.glitter-heart {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: pink;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ff6b6b, 0 0 15px #ffb6b9, 0 0 20px #fcb9b2;
+    animation: glitter float linear infinite;
+    opacity: 0.8;
+}
+@keyframes glitter {
+    0% { transform: translateY(0) scale(1); opacity: 0.8;}
+    50% { transform: translateY(-30px) scale(1.5); opacity: 1;}
+    100% { transform: translateY(0) scale(1); opacity: 0.8;}
+}
+
+/* Parallax stars */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle infinite alternate;
+    opacity: 0.8;
+}
+@keyframes twinkle {
+    0% { opacity: 0.2; }
+    100% { opacity: 1; }
 }
 </style>
 </head>
-
 <body>
 
-<h1>Happy Valentine’s Day 💖<br>Aliyah</h1>
-
-<div class="section">
-<p>Even if your phone was stolen, nothing can steal our love. Not distance. Not problems. Not bad days. I still choose you every single time. 💌</p>
-</div>
-
-<div class="section">
-<h2>Play Our Song 🎵</h2>
-<audio controls>
-  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+<!-- Background music -->
+<audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
 </audio>
-</div>
 
-<div class="section gallery">
-<h2>Our Cute Gallery 📸</h2>
-<img src="https://picsum.photos/200?1">
-<img src="https://picsum.photos/200?2">
-<img src="https://picsum.photos/200?3">
-</div>
+<!-- Navigation -->
+<nav id="pageNav"></nav>
 
+<!-- Falling hearts, glitter, stars -->
 <script>
-for(let i=0;i<25;i++){
-let heart=document.createElement("div");
-heart.className="heart";
-heart.innerHTML="❤";
-heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(10+Math.random()*25)+"px";
-heart.style.animationDuration=(4+Math.random()*4)+"s";
-document.body.appendChild(heart);
+for(let i=0;i<100;i++){
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.animationDuration = (Math.random()*5+5) + "s";
+    heart.style.width = heart.style.height = (Math.random()*20+15)+"px";
+    heart.style.backgroundColor = ["#ff6b6b","#ffb6b9","#fcb9b2","#ff8fa3"][Math.floor(Math.random()*4)];
+    document.body.appendChild(heart);
+}
+for(let i=0;i<50;i++){
+    let glitter = document.createElement("div");
+    glitter.className = "glitter-heart";
+    glitter.style.left = Math.random()*100 + "vw";
+    glitter.style.top = Math.random()*100 + "vh";
+    glitter.style.animationDuration = (Math.random()*3+2) + "s";
+    document.body.appendChild(glitter);
+}
+for(let i=0;i<100;i++){
+    let star = document.createElement("div");
+    star.className = "star";
+    star.style.left = Math.random()*100 + "vw";
+    star.style.top = Math.random()*100 + "vh";
+    star.style.width = star.style.height = Math.random()*3 + "px";
+    star.style.animationDuration = (Math.random()*3+1) + "s";
+    document.body.appendChild(star);
 }
 </script>
 
-<!-- 50 Cute Sections -->
-
-<div class="section"><h2>1</h2><p>Your smile is my favorite notification.</p></div>
-<div class="section"><h2>2</h2><p>Your laugh is my comfort sound.</p></div>
-<div class="section"><h2>3</h2><p>The way you say “bebiii” melts me.</p></div>
-<div class="section"><h2>4</h2><p>Your sleepy voice is adorable.</p></div>
-<div class="section"><h2>5</h2><p>You care about my health like no one else.</p></div>
-<div class="section"><h2>6</h2><p>Your hardworking side is so attractive.</p></div>
-<div class="section"><h2>7</h2><p>Your blush is my weakness.</p></div>
-<div class="section"><h2>8</h2><p>You overthink because you love deeply.</p></div>
-<div class="section"><h2>9</h2><p>Your good morning texts are better than sunshine.</p></div>
-<div class="section"><h2>10</h2><p>Your soft heart makes you special.</p></div>
-
-<div class="section"><h2>11</h2><p>You make simple moments magical.</p></div>
-<div class="section"><h2>12</h2><p>Your random giggles are priceless.</p></div>
-<div class="section"><h2>13</h2><p>You support me even from distance.</p></div>
-<div class="section"><h2>14</h2><p>You always say “po” so cutely.</p></div>
-<div class="section"><h2>15</h2><p>Your caring nature makes me feel safe.</p></div>
-<div class="section"><h2>16</h2><p>You make me feel chosen.</p></div>
-<div class="section"><h2>17</h2><p>Your eyes hold warmth.</p></div>
-<div class="section"><h2>18</h2><p>Your soft energy calms me.</p></div>
-<div class="section"><h2>19</h2><p>You celebrate even small wins.</p></div>
-<div class="section"><h2>20</h2><p>You make love feel gentle.</p></div>
-
-<div class="section"><h2>21</h2><p>Your sweetness is natural.</p></div>
-<div class="section"><h2>22</h2><p>You’re strong even when you cry.</p></div>
-<div class="section"><h2>23</h2><p>Your effort means everything.</p></div>
-<div class="section"><h2>24</h2><p>You glow even on bad days.</p></div>
-<div class="section"><h2>25</h2><p>You make distance feel smaller.</p></div>
-
-<div class="section"><h2>26</h2><p>Your loyalty is rare.</p></div>
-<div class="section"><h2>27</h2><p>You’re my favorite human.</p></div>
-<div class="section"><h2>28</h2><p>You make my heart peaceful.</p></div>
-<div class="section"><h2>29</h2><p>You inspire me daily.</p></div>
-<div class="section"><h2>30</h2><p>Your love feels safe.</p></div>
-
-<div class="section"><h2>31</h2><p>Your messages brighten my mood.</p></div>
-<div class="section"><h2>32</h2><p>You are beautifully genuine.</p></div>
-<div class="section"><h2>33</h2><p>Your voice is my comfort place.</p></div>
-<div class="section"><h2>34</h2><p>You always try your best.</p></div>
-<div class="section"><h2>35</h2><p>You make me proud.</p></div>
-
-<div class="section"><h2>36</h2><p>Your kindness is unmatched.</p></div>
-<div class="section"><h2>37</h2><p>You are my sunshine.</p></div>
-<div class="section"><h2>38</h2><p>You are my calm.</p></div>
-<div class="section"><h2>39</h2><p>You are my happiness.</p></div>
-<div class="section"><h2>40</h2><p>You are my heart.</p></div>
-
-<div class="section"><h2>41</h2><p>You make love feel easy.</p></div>
-<div class="section"><h2>42</h2><p>You make me feel lucky.</p></div>
-<div class="section"><h2>43</h2><p>You are beautiful inside and out.</p></div>
-<div class="section"><h2>44</h2><p>You care deeply.</p></div>
-<div class="section"><h2>45</h2><p>You never give up.</p></div>
-
-<div class="section"><h2>46</h2><p>You are soft yet strong.</p></div>
-<div class="section"><h2>47</h2><p>You make every day special.</p></div>
-<div class="section"><h2>48</h2><p>You are my favorite notification.</p></div>
-<div class="section"><h2>49</h2><p>You are my always.</p></div>
-<div class="section"><h2>50</h2><p>No matter what happens, I choose you. Always. Happy Valentine’s Day my love 💖</p></div>
-
-<div class="section">
-<h2>Final Message</h2>
-<p>This website is just a tiny piece of how much you mean to me. Phones can be stolen, money can be lost, but love like this stays. I’m proud of you, I care about you, and I will always be here for you. 💘</p>
+<!-- Page 0 Intro -->
+<div class="section" id="page0">
+<h1>Happy Valentine’s Day 💖</h1>
+<p>Even though your phone was stolen, nothing can steal our love, joy, and the bond we share. Today is for celebrating you — your heart, your care, your smile, your little things that make life magical. Technology can fail, but feelings never fade. Happy Valentine’s Day, my Aliyah.</p>
 </div>
 
+<script>
+// Array of 50 pages
+const pages = [
+"Your Smile|Your smile is pure sunshine. It lights up everything around you, calms hearts, and makes ordinary moments extraordinary. It’s natural, effortless, and full of warmth.",
+"Your Dance|Your dance shows freedom, joy, and confidence. Every move is playful, happy, and captivating. Watching you is a glimpse of pure happiness.",
+"Your Care|You care in the smallest ways — reminding, asking, checking. That attention and thoughtfulness make me feel cherished, safe, and deeply loved.",
+"Your Love for Novels|The way you read and live stories shows your depth, imagination, and empathy. You connect with emotions, characters, and meaning beautifully.",
+"Your Emotional Depth|You feel deeply and genuinely. Every laugh, every smile, every tear comes from sincerity. Your heart is real, authentic, and remarkable.",
+"Your Loyalty|Your loyalty is quiet but powerful. It reassures, comforts, and shows how strong and genuine your heart is.",
+"Your Good Morning Energy|Your good mornings bring warmth, affection, and positivity. Every message feels like a ray of sunshine.",
+"Your Good Night Sweetness|Your good nights are soft hugs in words. They bring peace, comfort, and closeness before sleep.",
+"Your Strength|You face challenges with courage and resilience. Even when life is hard, you remain steady, inspiring, and brave.",
+"Your Respect|You naturally speak with kindness and dignity. Respect flows from you effortlessly, making you beautiful inside and out.",
+"Your Laugh|Your laugh is joyful, genuine, and contagious. It brightens everything, lifts moods, and fills hearts with happiness.",
+"Your Patience|You are calm and composed even in difficult moments. Your patience creates peace and shows maturity and grace.",
+"Your Thoughtfulness|You notice details others miss. Your gestures, words, and care show a deeply loving and attentive heart.",
+"Your Playfulness|You keep life fun. Your jokes, teasing, and silly moments bring joy, laughter, and lighthearted energy into every day.",
+"Your Soft Heart|Your heart is tender and genuine. You feel fully, care deeply, and embrace emotions naturally. That makes loving you effortless.",
+"Your Innocence|Your innocence adds sweetness to your personality. It’s in your reactions, excitement, honesty, and genuine expressions.",
+"Your Sweet Messages|Your texts are full of warmth, affection, and care. Each word reaches my heart and reminds me of your love constantly.",
+"Your Excitement|Your enthusiasm and joy are contagious. They make ordinary days feel magical and alive.",
+"Your Loyalty|Your loyalty is unwavering. You choose consistently, love genuinely, and show dedication that inspires trust and admiration.",
+"Your Resilience|Even during challenges, you remain strong and positive. Your resilience inspires and proves the depth of your heart.",
+"Your Love for Details|You notice and remember small things that matter. Your attention to detail shows thoughtfulness, care, and love in the purest form.",
+"Your Calm Energy|Your presence is calming. Even silence with you feels peaceful. That natural calm makes moments with you treasured.",
+"Your Thoughtful Heart|Every action and word from you reflects your sincere, loving heart. Your empathy and care touch everyone you meet.",
+"Your Voice|Your voice is soft, soothing, and genuine. Every word feels like a comforting embrace that lingers long after you speak.",
+"Your Laughter|Your laughter lights up hearts, lifts spirits, and makes every day happier. It’s a sound I could never get tired of hearing.",
+"Your Shyness|Your shy reactions, blushes, and quiet moments are incredibly adorable. They show your authenticity and sweetness.",
+"Your Playfulness|You bring joy through jokes, teasing, and fun interactions. That playfulness keeps life lively and magical with you.",
+"Your Intelligence|Your thoughtful mind, insight, and wisdom make every conversation with you meaningful and inspiring.",
+"Your Curiosity|Your curiosity about life, stories, and people makes you endlessly fascinating. You explore, imagine, and learn in beautiful ways.",
+"Your Gentle Care|Your gentleness shows in words, actions, and attention. You make everyone feel seen, safe, and loved without effort.",
+"Your Optimism|You find light in every situation. Your hopefulness lifts hearts, inspires, and spreads positivity wherever you go.",
+"Your Care in Words|Every message you send carries love and attention. Your words alone make hearts feel cherished and special.",
+"Your Innocence|There’s a rare innocence in your heart that adds charm, sweetness, and genuineness to everything you do.",
+"Your Courage|You face challenges bravely, handling setbacks with grace, patience, and determination. That courage inspires admiration.",
+"Your Consistency|Your care, love, and attention are consistent. That reliability builds trust and makes your heart deeply admirable.",
+"Your Sweet Surprises|Your little surprises — playful texts, soft words, or thoughtful gestures — show your love constantly and beautifully.",
+"Your Imagination|Your imagination is creative, vivid, and inspiring. You bring stories, ideas, and dreams to life in ways that fascinate and delight.",
+"Your Thoughtful Advice|Your advice is gentle, wise, and heartfelt. It always guides and supports with love and insight.",
+"Your Kindness|Your kindness flows naturally. From small gestures to big actions, your heart shines in everything you do, making life brighter for everyone around you.",
+"Your Playful Spirit|You make life lively and joyful with jokes, teasing, and playful energy. Being with you is never dull — it’s always vibrant and fun.",
+"Your Passion|Your passion in everything you do — dancing, reading, caring — inspires love, admiration, and joy. You put your heart into life fully.",
+"Your Softness|Your gentle and soft nature comforts hearts. You combine tenderness with strength beautifully, making your presence unforgettable.",
+"Your Dedication|Your dedication is inspiring. You commit to people, passions, and dreams fully, showing sincerity and love in every effort.",
+"Your Laughter|Your laughter is one of life’s purest joys. It’s heartfelt, playful, and magical, lifting hearts and spreading happiness.",
+"Your Gentleness|Everything you do carries gentleness. Your words, gestures, and presence make hearts feel safe, loved, and comforted.",
+"Your Inspiration|Your character, heart, and love inspire me daily. You motivate me to love, care, and live more fully and deeply.",
+"Your Presence|Being near you is calming, exciting, and comforting. Your presence alone makes every moment unforgettable and special.",
+"Your Love|Your love is deep, sincere, and full of life. It is patient, kind, and endlessly cherished. Loving you feels natural, safe, and magical.",
+"Your Little Things|Your quirks, habits, blushes, laughs, dances, thoughts, and gestures make you wholly unique. Every little thing about you is precious, adorable, and memorable.",
+"Choosing You|At the end of every day, no matter distance, lost phones, or challenges, I choose you. Always. Your heart, care, smiles, laughter, and love are irreplaceable. You are my forever Valentine, Aliyah."
+];
+
+// Generate sections and nav links
+const nav = document.getElementById("pageNav");
+pages.forEach((page,index)=>{
+    let div = document.createElement("div");
+    div.className = "section";
+    div.id = "page"+(index+1);
+    div.innerHTML = `<h2>Page ${index+1} – ${page.split("|")[0]}</h2><p>${page.split("|")[1]}</p>`;
+    document.body.appendChild(div);
+
+    let link = document.createElement("a");
+    link.href = "#page"+(index+1);
+    link.textContent = index+1;
+    nav.appendChild(link);
+});
+</script>
+
+<footer>
+Made by Alle Hassan with love for Aliyah (Maricar Carugda) ❤️
+</footer>
+
 </body>
-                                  </html>
+</html>
