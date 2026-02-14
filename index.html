@@ -22,84 +22,78 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255,255,255,0.9);
-    padding: 10px 0;
+    background: rgba(255,255,255,0.92);
+    padding: 8px 0;
     z-index: 1000;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
 nav a {
     font-family: 'Pacifico', cursive;
-    margin: 0 5px;
+    margin: 0 4px;
     text-decoration: none;
     color: #d62828;
-    font-size: 1em;
+    font-size: 0.9em;
     transition: transform 0.2s, color 0.2s;
 }
 
 nav a:hover {
     color: #e63946;
-    transform: scale(1.2);
+    transform: scale(1.3);
 }
 
 .section {
     min-height: 100vh;
-    width: 100%;
-    padding: 100px 60px;
+    width: 90%;
+    padding: 90px 20px;
+    margin: 40px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     background: rgba(255,255,255,0.95);
-    margin: 0;
-    border-radius: 25px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    border-radius: 20px;
+    box-shadow: 0 8px 35px rgba(0,0,0,0.15);
     position: relative;
     overflow: hidden;
-    transition: transform 0.3s;
-}
-.section:hover p {
-    transform: scale(1.03);
-    color: #e63946;
 }
 
 h1 {
-    font-size: 4em;
+    font-size: 2.7em;
     color: #e63946;
     font-family: 'Pacifico', cursive;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 
 h2 {
-    font-size: 3em;
-    margin-bottom: 40px;
+    font-size: 2em;
+    margin-bottom: 25px;
     color: #d62828;
     font-family: 'Pacifico', cursive;
 }
 
 p {
     max-width: 1000px;
-    font-size: 1.5em;
-    line-height: 2.2em;
-    transition: transform 0.3s, color 0.3s;
+    font-size: 1.2em;
+    line-height: 1.8em;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 60px 20px;
+    padding: 30px 10px;
     font-family: 'Pacifico', cursive;
-    font-size: 1.3em;
+    font-size: 1.1em;
     color: #d62828;
 }
 
 /* Falling hearts animation */
 .heart {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     background: red;
     transform: rotate(45deg);
     left: 0;
@@ -110,8 +104,8 @@ footer {
 .heart::before, .heart::after {
     content: "";
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     background: red;
     border-radius: 50%;
 }
@@ -120,23 +114,23 @@ footer {
 
 @keyframes fall {
     0% { transform: translateY(0) rotate(45deg); opacity:1;}
-    100% { transform: translateY(120vh) rotate(405deg); opacity:0;}
+    100% { transform: translateY(110vh) rotate(405deg); opacity:0;}
 }
 
 /* Glitter hearts animation */
 .glitter-heart {
     position: absolute;
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     background: pink;
     border-radius: 50%;
-    box-shadow: 0 0 10px #ff6b6b, 0 0 15px #ffb6b9, 0 0 20px #fcb9b2;
+    box-shadow: 0 0 8px #ff6b6b, 0 0 12px #ffb6b9;
     animation: glitter float linear infinite;
     opacity: 0.8;
 }
 @keyframes glitter {
     0% { transform: translateY(0) scale(1); opacity: 0.8;}
-    50% { transform: translateY(-30px) scale(1.5); opacity: 1;}
+    50% { transform: translateY(-20px) scale(1.5); opacity: 1;}
     100% { transform: translateY(0) scale(1); opacity: 0.8;}
 }
 
@@ -158,26 +152,28 @@ footer {
 </head>
 <body>
 
-<!-- Background music -->
+<!-- Romantic Background Music (safe to auto-play on GitHub Pages) -->
 <audio autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    <source src="https://cdn.jsdelivr.net/gh/AlleHassan2008-crypto/Aliyah-Maricar-carugda/audio/romantic.mp3" type="audio/mpeg">
 </audio>
 
 <!-- Navigation -->
 <nav id="pageNav"></nav>
 
-<!-- Falling hearts, glitter, stars -->
+<!-- Falling hearts, glitter hearts, stars -->
 <script>
-for(let i=0;i<100;i++){
+// falling hearts
+for(let i=0;i<80;i++){
     let heart = document.createElement("div");
     heart.className = "heart";
     heart.style.left = Math.random()*100 + "vw";
     heart.style.animationDuration = (Math.random()*5+5) + "s";
-    heart.style.width = heart.style.height = (Math.random()*20+15)+"px";
     heart.style.backgroundColor = ["#ff6b6b","#ffb6b9","#fcb9b2","#ff8fa3"][Math.floor(Math.random()*4)];
     document.body.appendChild(heart);
 }
-for(let i=0;i<50;i++){
+
+// glitter hearts
+for(let i=0;i<40;i++){
     let glitter = document.createElement("div");
     glitter.className = "glitter-heart";
     glitter.style.left = Math.random()*100 + "vw";
@@ -185,25 +181,26 @@ for(let i=0;i<50;i++){
     glitter.style.animationDuration = (Math.random()*3+2) + "s";
     document.body.appendChild(glitter);
 }
-for(let i=0;i<100;i++){
+
+// stars
+for(let i=0;i<80;i++){
     let star = document.createElement("div");
     star.className = "star";
     star.style.left = Math.random()*100 + "vw";
     star.style.top = Math.random()*100 + "vh";
-    star.style.width = star.style.height = Math.random()*3 + "px";
     star.style.animationDuration = (Math.random()*3+1) + "s";
     document.body.appendChild(star);
 }
 </script>
 
-<!-- Page 0 Intro -->
+<!-- Intro Section -->
 <div class="section" id="page0">
 <h1>Happy Valentine’s Day 💖</h1>
 <p>Even though your phone was stolen, nothing can steal our love, joy, and the bond we share. Today is for celebrating you — your heart, your care, your smile, your little things that make life magical. Technology can fail, but feelings never fade. Happy Valentine’s Day, my Aliyah.</p>
 </div>
 
 <script>
-// Array of 50 pages
+// All 50 pages with navigation
 const pages = [
 "Your Smile|Your smile is pure sunshine. It lights up everything around you, calms hearts, and makes ordinary moments extraordinary. It’s natural, effortless, and full of warmth.",
 "Your Dance|Your dance shows freedom, joy, and confidence. Every move is playful, happy, and captivating. Watching you is a glimpse of pure happiness.",
@@ -254,28 +251,4 @@ const pages = [
 "Your Presence|Being near you is calming, exciting, and comforting. Your presence alone makes every moment unforgettable and special.",
 "Your Love|Your love is deep, sincere, and full of life. It is patient, kind, and endlessly cherished. Loving you feels natural, safe, and magical.",
 "Your Little Things|Your quirks, habits, blushes, laughs, dances, thoughts, and gestures make you wholly unique. Every little thing about you is precious, adorable, and memorable.",
-"Choosing You|At the end of every day, no matter distance, lost phones, or challenges, I choose you. Always. Your heart, care, smiles, laughter, and love are irreplaceable. You are my forever Valentine, Aliyah."
-];
-
-// Generate sections and nav links
-const nav = document.getElementById("pageNav");
-pages.forEach((page,index)=>{
-    let div = document.createElement("div");
-    div.className = "section";
-    div.id = "page"+(index+1);
-    div.innerHTML = `<h2>Page ${index+1} – ${page.split("|")[0]}</h2><p>${page.split("|")[1]}</p>`;
-    document.body.appendChild(div);
-
-    let link = document.createElement("a");
-    link.href = "#page"+(index+1);
-    link.textContent = index+1;
-    nav.appendChild(link);
-});
-</script>
-
-<footer>
-Made by Alle Hassan with love for Aliyah (Maricar Carugda) ❤️
-</footer>
-
-</body>
-</html>
+"Choosing You|At the end of every day, no matter distance, lost phones, or challenges, I choose you. Always. Your heart, care, smiles, laughter, and love are irreplaceable.0
