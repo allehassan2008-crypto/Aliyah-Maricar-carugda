@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Valentine’s Day ❤️</title>
+<title>Cheer Up, My Bebiii! 💖</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
@@ -12,53 +12,36 @@ body {
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #ff9a9e, #fad0c4);
     color: #333;
-    scroll-behavior: smooth;
     overflow-x: hidden;
+    scroll-behavior: smooth;
     position: relative;
 }
 
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(255,255,255,0.92);
-    padding: 10px 0;
-    text-align: center;
-    overflow-x: auto;
-    white-space: nowrap;
-    z-index: 1000;
-}
-
-nav a {
-    font-family: 'Pacifico', cursive;
-    margin: 0 6px;
-    text-decoration: none;
-    color: #d62828;
-    font-size: 0.9em;
-    transition: 0.2s;
-}
-nav a:hover { color: #e63946; transform: scale(1.2); }
+h1, h2 { font-family: 'Pacifico', cursive; color: #e63946; margin-bottom: 20px; text-align: center; }
+p { font-size: 1.2em; line-height: 1.6em; text-align: center; max-width: 600px; margin: 10px auto; }
 
 .section {
     min-height: 100vh;
-    width: 90%;
-    padding: 100px 20px;
-    margin: 50px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: rgba(255,255,255,0.95);
-    border-radius: 20px;
-    box-shadow: 0 8px 35px rgba(0,0,0,0.15);
-    position: relative;
+    padding: 80px 20px;
 }
 
-h1, h2 { color: #e63946; font-family: 'Pacifico', cursive; margin-bottom: 25px; }
-p { font-size: 1.2em; line-height: 1.6em; }
-
-footer { text-align: center; padding: 20px; font-family: 'Pacifico', cursive; color: #d62828; }
+button {
+    padding: 10px 20px;
+    font-family: 'Pacifico', cursive;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+button:hover { background: #e63946; transform: scale(1.1); }
 
 /* Falling hearts */
 .heart { position: absolute; width: 18px; height: 18px; background: red; transform: rotate(45deg); top: -10px; animation: fall linear infinite; }
@@ -77,28 +60,18 @@ footer { text-align: center; padding: 20px; font-family: 'Pacifico', cursive; co
 
 @media (max-width:480px){
     h1{font-size:2em;}
-    h2{font-size:1.5em;}
-    p{font-size:1em;line-height:1.4em;}
-    nav a{font-size:0.8em;margin:0 3px;}
-    .section{padding:70px 15px;margin:40px auto;}
+    p{font-size:1em;}
+    button{font-size:1em;}
 }
 </style>
 </head>
 <body>
 
-<!-- Background music -->
-<audio autoplay loop>
-  <source src="https://cdn.jsdelivr.net/gh/AlleHassan2008-crypto/Aliyah-Maricar-carugda/audio/romantic.mp3" type="audio/mpeg">
-</audio>
-
-<!-- Navigation -->
-<nav id="pageNav"></nav>
-
-<!-- Falling hearts, glitter hearts, stars -->
+<!-- Falling hearts, glitter, stars -->
 <script>
 // Falling hearts
-for(let i=0;i<80;i++){
-    let heart = document.createElement("div");
+for(let i=0;i<50;i++){
+    let heart=document.createElement("div");
     heart.className="heart";
     heart.style.left=Math.random()*100+"vw";
     heart.style.animationDuration=(Math.random()*5+5)+"s";
@@ -107,8 +80,8 @@ for(let i=0;i<80;i++){
 }
 
 // Glitter hearts
-for(let i=0;i<40;i++){
-    let glitter = document.createElement("div");
+for(let i=0;i<30;i++){
+    let glitter=document.createElement("div");
     glitter.className="glitter-heart";
     glitter.style.left=Math.random()*100+"vw";
     glitter.style.top=Math.random()*100+"vh";
@@ -117,8 +90,8 @@ for(let i=0;i<40;i++){
 }
 
 // Stars
-for(let i=0;i<80;i++){
-    let star = document.createElement("div");
+for(let i=0;i<60;i++){
+    let star=document.createElement("div");
     star.className="star";
     star.style.left=Math.random()*100+"vw";
     star.style.top=Math.random()*100+"vh";
@@ -127,92 +100,40 @@ for(let i=0;i<80;i++){
 }
 </script>
 
-<!-- Intro section about lost phone and love -->
-<div class="section" id="page0">
-<h1>Happy Valentine’s Day 💖</h1>
-<p>Even though your phone was lost or stolen, nothing can take away our love, joy, and the bond we share. Today is for celebrating you — your heart, your care, your smile, and all the little things that make life magical. Technology can fail, but feelings never fade. Happy Valentine’s Day, my Aliyah.</p>
+<div class="section">
+<h1>Good Morning, Bebiii! 💖</h1>
+<p>I just wanted to remind you how amazing you are! Every smile, every laugh, every little thing you do makes my world brighter. Even on tough days, you are my sunshine. 🌞</p>
+<button onclick="playVoice()">Play My Voice Note ❤️</button>
+<audio id="voiceNote">
+    <source src="https://cdn.jsdelivr.net/gh/AlleHassan2008-crypto/Aliyah-Maricar-carugda/audio/romantic.mp3" type="audio/mpeg">
+</audio>
 </div>
 
-<!-- Pages content -->
+<div class="section">
+<h2>Cheer Up, My Love! 🥰</h2>
+<p>Whenever you feel down, remember: you are my happiness, my reason to smile, my favorite person in the universe. Close your eyes, imagine me hugging you, and let the love flow. 💕</p>
+</div>
+
+<div class="section">
+<h2>Little Surprise Note 😘</h2>
+<p>"If you’re reading this… I’m already thinking about kissing you 😏💖"</p>
+<p>"Caution: This page contains 100% pure cuteness… and a little bit of me 😍"</p>
+<p>"Stop… don’t read this… oh wait, too late. You’re too adorable 😘"</p>
+</div>
+
+<footer>
+Made with ❤️ by Alle Hassan, just for Aliyah
+</footer>
+
 <script>
-const pages = [
-"Your Smile|Your smile is pure sunshine. It lights up everything around you, calms hearts, and makes ordinary moments extraordinary. It’s natural, effortless, and full of warmth.",
-"Your Dance|Your dance shows freedom, joy, and confidence. Every move is playful, happy, and captivating. Watching you is a glimpse of pure happiness.",
-"Your Care|You care in the smallest ways — reminding, asking, checking. That attention and thoughtfulness make me feel cherished, safe, and deeply loved.",
-"Your Love for Novels|The way you read and live stories shows your depth, imagination, and empathy. You connect with emotions, characters, and meaning beautifully.",
-"Your Emotional Depth|You feel deeply and genuinely. Every laugh, every smile, every tear comes from sincerity. Your heart is real, authentic, and remarkable.",
-"Your Loyalty|Your loyalty is quiet but powerful. It reassures, comforts, and shows how strong and genuine your heart is.",
-"Your Good Morning Energy|Your good mornings bring warmth, affection, and positivity. Every message feels like a ray of sunshine.",
-"Your Good Night Sweetness|Your good nights are soft hugs in words. They bring peace, comfort, and closeness before sleep.",
-"Your Strength|You face challenges with courage and resilience. Even when life is hard, you remain steady, inspiring, and brave.",
-"Your Respect|You naturally speak with kindness and dignity. Respect flows from you effortlessly, making you beautiful inside and out.",
-"Your Laugh|Your laugh is joyful, genuine, and contagious. It brightens everything, lifts moods, and fills hearts with happiness.",
-"Your Patience|You are calm and composed even in difficult moments. Your patience creates peace and shows maturity and grace.",
-"Your Thoughtfulness|You notice details others miss. Your gestures, words, and care show a deeply loving and attentive heart.",
-"Your Playfulness|You keep life fun. Your jokes, teasing, and silly moments bring joy, laughter, and lighthearted energy into every day.",
-"Your Soft Heart|Your heart is tender and genuine. You feel fully, care deeply, and embrace emotions naturally. That makes loving you effortless.",
-"Your Innocence|Your innocence adds sweetness to your personality. It’s in your reactions, excitement, honesty, and genuine expressions.",
-"Your Sweet Messages|Your texts are full of warmth, affection, and care. Each word reaches my heart and reminds me of your love constantly.",
-"Your Excitement|Your enthusiasm and joy are contagious. They make ordinary days feel magical and alive.",
-"Your Loyalty|Your loyalty is unwavering. You choose consistently, love genuinely, and show dedication that inspires trust and admiration.",
-"Your Resilience|Even during challenges, you remain strong and positive. Your resilience inspires and proves the depth of your heart.",
-"Your Love for Details|You notice and remember small things that matter. Your attention to detail shows thoughtfulness, care, and love in the purest form.",
-"Your Calm Energy|Your presence is calming. Even silence with you feels peaceful. That natural calm makes moments with you treasured.",
-"Your Thoughtful Heart|Every action and word from you reflects your sincere, loving heart. Your empathy and care touch everyone you meet.",
-"Your Voice|Your voice is soft, soothing, and genuine. Every word feels like a comforting embrace that lingers long after you speak.",
-"Your Laughter|Your laughter lights up hearts, lifts spirits, and makes every day happier. It’s a sound I could never get tired of hearing.",
-"Your Shyness|Your shy reactions, blushes, and quiet moments are incredibly adorable. They show your authenticity and sweetness.",
-"Your Playfulness|You bring joy through jokes, teasing, and fun interactions. That playfulness keeps life lively and magical with you.",
-"Your Intelligence|Your thoughtful mind, insight, and wisdom make every conversation with you meaningful and inspiring.",
-"Your Curiosity|Your curiosity about life, stories, and people makes you endlessly fascinating. You explore, imagine, and learn in beautiful ways.",
-"Your Gentle Care|Your gentleness shows in words, actions, and attention. You make everyone feel seen, safe, and loved without effort.",
-"Your Optimism|You find light in every situation. Your hopefulness lifts hearts, inspires, and spreads positivity wherever you go.",
-"Your Care in Words|Every message you send carries love and attention. Your words alone make hearts feel cherished and special.",
-"Your Innocence|There’s a rare innocence in your heart that adds charm, sweetness, and genuineness to everything you do.",
-"Your Courage|You face challenges bravely, handling setbacks with grace, patience, and determination. That courage inspires admiration.",
-"Your Consistency|Your care, love, and attention are consistent. That reliability builds trust and makes your heart deeply admirable.",
-"Your Sweet Surprises|Your little surprises — playful texts, soft words, or thoughtful gestures — show your love constantly and beautifully.",
-"Your Imagination|Your imagination is creative, vivid, and inspiring. You bring stories, ideas, and dreams to life in ways that fascinate and delight.",
-"Your Thoughtful Advice|Your advice is gentle, wise, and heartfelt. It always guides and supports with love and insight.",
-"Your Kindness|Your kindness flows naturally. From small gestures to big actions, your heart shines in everything you do, making life brighter for everyone around you.",
-"Your Playful Spirit|You make life lively and joyful with jokes, teasing, and playful energy. Being with you is never dull — it’s always vibrant and fun.",
-"Your Passion|Your passion in everything you do — dancing, reading, caring — inspires love, admiration, and joy. You put your heart into life fully.",
-"Your Softness|Your gentle and soft nature comforts hearts. You combine tenderness with strength beautifully, making your presence unforgettable.",
-"Your Dedication|Your dedication is inspiring. You commit to people, passions, and dreams fully, showing sincerity and love in every effort.",
-"Your Laughter|Your laughter is one of life’s purest joys. It’s heartfelt, playful, and magical, lifting hearts and spreading happiness.",
-"Your Gentleness|Everything you do carries gentleness. Your words, gestures, and presence make hearts feel safe, loved, and comforted.",
-"Your Inspiration|Your character, heart, and love inspire me daily. You motivate me to love, care, and live more fully and deeply.",
-"Your Presence|Being near you is calming, exciting, and comforting. Your presence alone makes every moment unforgettable and special.",
-"Your Love|Your love is deep, sincere, and full of life. It is patient, kind, and endlessly cherished. Loving you feels natural, safe, and magical.",
-"Your Little Things|Your quirks, habits, blushes, laughs, dances, thoughts, and gestures make you wholly unique. Every little thing about you is precious, adorable, and memorable.",
-"Choosing You|At the end of every day, no matter distance, lost phones, or challenges, I choose you. Always. Your heart, care, smiles, laughter, and love are irreplaceable. You are my forever Valentine, Aliyah."
-];
-
-window.onload=function(){
-    const nav=document.getElementById("pageNav");
-
-    // Add nav link for intro
-    let introLink=document.createElement("a");
-    introLink.href="#page0";
-    introLink.textContent="Intro";
-    nav.appendChild(introLink);
-
-    pages.forEach((p,i)=>{
-        const div=document.createElement("div");
-        div.className="section";
-        div.id="page"+(i+1);
-        const parts=p.split("|");
-        div.innerHTML=`<h2>Page ${i+1} – ${parts[0]}</h2><p>${parts[1]}</p>`;
-        document.body.appendChild(div);
-
-        const link=document.createElement("a");
-        link.href="#page"+(i+1);
-        link.textContent=i+1;
-        nav.appendChild(link);
-    });
-};
+function playVoice() {
+    const audio = document.getElementById("voiceNote");
+    audio.play();
+}
 </script>
 
+</body>
+</html>
 <footer>
 Made by Alle Hassan with love for Aliyah ❤️
 </footer>
